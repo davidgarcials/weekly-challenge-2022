@@ -55,6 +55,35 @@ document.addEventListener(
       }
     }
 
+    /*
+     * Reto #3
+     * ¿ES UN NÚMERO PRIMO?
+     * Fecha publicación enunciado: 17/01/22
+     * Fecha publicación resolución: 24/01/22
+     * Dificultad: MEDIA
+     *
+     * Enunciado: Escribe un programa que se encargue de comprobar si un número es o no primo.
+     * Hecho esto, imprime los números primos entre 1 y 100.
+     */
+
+    if (event.target.matches("#challenge03")) {
+      const primeNumber = (number) => {
+        if (number < 2) {
+          return false;
+        }
+
+        for (let i = 2; i < number; i++) {
+          if (number % i === 0) return false;
+        }
+
+        return true;
+      };
+
+      for (let i = 1; i <= 100; i++) {
+        primeNumber(i) && console.log(i);
+      }
+    }
+
     // Don't follow the link
     event.preventDefault();
   },
